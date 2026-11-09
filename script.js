@@ -14,24 +14,8 @@ const SKILLS=[
 ["Development",["HTML","CSS","JavaScript","Vue.js","Vite","React.js","PHP","Laravel","Blade","SQL"]],
 ["Tools",["Figma","Canva","CapCut","Git & GitHub","Docker","Microsoft Excel","Google Workspace"]]];
 
-const DEEP_NOMNOM=[
-{h:"How the problem was chosen",b:[
-{p:"Our team started from five everyday problems: deciding what to eat, lost belongings, outfit combinations, ordering healthy food, and remembering to service vehicles and devices. We chose the food decision problem to develop."},
-{p:"We opened up solutions with three How Might We questions and SCAMPER:"},
-{ul:["How might we help students find food that is easy to reach around them?","How might we help students find food that fits their taste and personal needs?","How might we help students decide faster when there are too many options?"]},
-{p:"That produced four directions: AI Food Recommender, Kantong Kuliner (food and monthly budget), Food Around Me (every nearby option in one view), and Choose Your Taste (ranking by a taste profile). We developed AI Food Recommender, which picks one meal based on budget, available time, and taste, instead of listing restaurants for the user to compare."}]},
-{h:"Research with 31 respondents",b:[
-{p:"We first drafted a persona, “Ani”, a student active around campus, from assumptions. Then we ran customer interviews with first- to third-year students, students active in organizations, and final-year students, and looked for patterns in the responses."},
-{ul:["Most students buy food near campus once or twice a day and spend about Rp15,000–Rp30,000 per meal.","Price, distance from campus or boarding house, and taste matter most. Serving time, opening hours, and queues come next.","They decide through friends, TikTok and Instagram, delivery apps, and Google Maps reviews.","The problem is not too few options but too many similar ones, plus missing price or menu details, places that turn out to be closed, long queues, and food that does not match expectations.","When unsure, they return to a familiar place, ask a friend, or check reviews. They play it safe to avoid disappointment."]},
-{p:"Most respondents found the concept relevant, and Surprise Me appealed to them when they are too lazy or overwhelmed to choose. They also wanted prices, location, menus, ratings, reviews from other users, real food photos, and to know whether a place is open or crowded. Several said recommendations should fit personal taste, not only rating."}]},
-{h:"What the research changed",b:[
-{cmp:[["Students are confused because there are too many options.","Many respondents were confused by options that look alike.","Confirmed"],["Students need recommendations based on price and location.","Price and distance came first, followed by taste and time.","Confirmed"],["A recommendation app would help.","Most respondents called the concept relevant, and Surprise Me stood out.","Confirmed"],["Food information is already easy to find.","Price, menu, opening hours, and place conditions were often incomplete or out of date.","Not fully confirmed"]]},
-{ba:["Students struggle to decide what to eat because there are too many food options around campus.","Students struggle to find food that fits their budget, taste, distance, and available time. There are many options and the information about them is incomplete or not always accurate, so they risk wasting time and money on a wrong choice."]},
-{p:"The fourth assumption was the one that did not hold. It moved the concept from “recommend a meal” to “recommend a meal and give enough reliable information to trust it.” The persona was rewritten from the 31 responses, and the interface now shows prices, menus, locations, ratings, reviews, food photos, and open or closed status."}]}
-];
-
 const P=[
-{id:"nomnom",origin:"Self-initiated",ctx:"Course project, team of 4",deep:DEEP_NOMNOM,n:"01",t:"NomNom",sub:"AI Food Recommendation App",cat:"UX/UI Design · Mobile Application",type:"ui",role:"UX/UI Designer",status:"Design Prototype",
+{id:"nomnom",origin:"Self-initiated",ctx:"Course project, team of 4",n:"01",t:"NomNom",sub:"AI Food Recommendation App",cat:"UX/UI Design · Mobile Application",type:"ui",role:"UX/UI Designer",status:"Design Prototype",
 blurb:"A food recommendation app concept for university students. Our team chose the problem, then reshaped the idea after research with 31 respondents.",
 over:["NomNom is an AI-powered food recommendation app concept designed to help university students find suitable meals based on their budget, distance, available time, and food preferences.","Following the validation process, the concept was refined to provide more relevant recommendations and useful information, including prices, menus, locations, ratings, user reviews, food photos, and restaurant operating status.","The app also features a “Surprise Me” option for users who prefer instant recommendations without having to make their own selections."],
 challenge:"Choosing what to eat can be challenging for students, especially when they need to consider several factors such as budget, distance, time, and personal preferences. The goal was to create a more helpful food discovery experience that provides not only recommendations but also sufficient information to support users in making decisions.",
@@ -79,9 +63,6 @@ links:[["GitHub","https://github.com/nadhirafas/uts-pl-24535556SV24264/tree/main
 const $=s=>document.querySelector(s);
 const FL='<svg class="fl" viewBox="0 0 100 100" aria-hidden="true"><g fill="currentColor" stroke="var(--text)" stroke-width="2"><ellipse cx="50" cy="24" rx="12" ry="22"/><ellipse cx="50" cy="24" rx="12" ry="22" transform="rotate(60 50 50)"/><ellipse cx="50" cy="24" rx="12" ry="22" transform="rotate(120 50 50)"/><ellipse cx="50" cy="24" rx="12" ry="22" transform="rotate(180 50 50)"/><ellipse cx="50" cy="24" rx="12" ry="22" transform="rotate(240 50 50)"/><ellipse cx="50" cy="24" rx="12" ry="22" transform="rotate(300 50 50)"/></g><circle cx="50" cy="50" r="11" fill="var(--lilac)" stroke="var(--text)" stroke-width="2"/></svg>';
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const cmp=r=>`<div class="cmp" role="table"><div class="cr ch" role="row"><span role="columnheader">Assumption</span><span role="columnheader">What we found</span><span role="columnheader">Result</span></div>${r.map(([a,f,v])=>`<div class="cr" role="row"><span role="cell" data-l="Assumption">${esc(a)}</span><span role="cell" data-l="What we found">${esc(f)}</span><span role="cell" class="v"><span class="pill${v==="Confirmed"?"":" no"}">${esc(v)}</span></span></div>`).join("")}</div>`;
-const ba=([b,a])=>`<div class="ba"><div class="bb"><span class="pill">Before validation</span><p>${esc(b)}</p></div><div class="bb aft"><span class="pill">After validation</span><p>${esc(a)}</p></div></div>`;
-const deepHTML=d=>d.map(x=>`<h2>${esc(x.h)}</h2>${x.b.map(k=>k.p?`<p>${esc(k.p)}</p>`:k.ul?ul(k.ul):k.cmp?cmp(k.cmp):ba(k.ba)).join("")}`).join("");
 const ul=(a,c="list")=>`<ul class="${c}">${a.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`;
 
 const SHOTS={"gears-up": {"layout": "wins", "items": [{"src": "assets/img/gears-up/01-homepage.webp", "w": 1280, "h": 4590, "label": "Homepage", "url": "Figma V2 · Homepage", "k": "win", "bg": "#ffffff"}, {"src": "assets/img/gears-up/02-about-company-information.webp", "w": 1280, "h": 2817, "label": "About / company information", "url": "Figma V2 · About", "k": "win", "bg": "#ffffff"}, {"src": "assets/img/gears-up/03-programs.webp", "w": 1280, "h": 2604, "label": "Programs", "url": "Figma V2 · Programs", "k": "win", "bg": "#dce3fe"}, {"src": "assets/img/gears-up/04-gallery.webp", "w": 1280, "h": 2763, "label": "Gallery", "url": "Figma V2 · Gallery", "k": "win", "bg": "#fff2f0"}]}, "pad": {"layout": "wins3", "items": [{"src": "assets/img/pad/01-student-dashboard.webp", "w": 745, "h": 752, "label": "Student dashboard", "url": "Role: Student", "k": "win", "bg": "#281c3b"}, {"src": "assets/img/pad/02-teaching-assistant-dashboard.webp", "w": 947, "h": 720, "label": "Teaching assistant dashboard", "url": "Role: Teaching Assistant", "k": "win", "bg": "#291b3d"}, {"src": "assets/img/pad/03-lecturer-dashboard.webp", "w": 848, "h": 737, "label": "Lecturer dashboard", "url": "Role: Lecturer", "k": "win", "bg": "#291b3d"}]}, "resto-kita": {"layout": "wins", "items": [{"src": "assets/img/resto-kita/01-customer-menu-browsing.webp", "w": 1280, "h": 2480, "label": "Customer · Menu browsing", "url": "Customer view", "k": "win", "bg": "#3f2623"}, {"src": "assets/img/resto-kita/06-customer-cart.webp", "w": 1280, "h": 2480, "label": "Customer · Cart", "url": "Customer view", "k": "win", "bg": "#3f2623"}, {"src": "assets/img/resto-kita/02-customer-order-list.webp", "w": 1280, "h": 1287, "label": "Customer · Order list (add more)", "url": "Customer view", "k": "win", "bg": "#3f2623"}, {"src": "assets/img/resto-kita/03-customer-checkout-payment.webp", "w": 1280, "h": 1239, "label": "Customer · Checkout & payment", "url": "Customer view", "k": "win", "bg": "#3f2623"}, {"src": "assets/img/resto-kita/04-customer-order-details.webp", "w": 1280, "h": 1464, "label": "Customer · Order details", "url": "Customer view", "k": "win", "bg": "#3f2623"}, {"src": "assets/img/resto-kita/05-admin-order-management.webp", "w": 1280, "h": 932, "label": "Admin · Order management", "url": "Admin view", "k": "win", "bg": "#533379"}]}, "siyudis": {"layout": "wins", "items": [{"src": "assets/img/siyudis/01-student-dashboard.webp", "w": 1280, "h": 607, "label": "Student dashboard", "url": "localhost:5173/dashboard", "k": "win", "bg": "#053e74"}, {"src": "assets/img/siyudis/02-staff-administration-dashboard.webp", "w": 1280, "h": 607, "label": "Staff administration dashboard", "url": "localhost:5173/super-admin/dashboard", "k": "win", "bg": "#053e74"}, {"src": "assets/img/siyudis/03-role-management-super-admin.webp", "w": 1280, "h": 607, "label": "Role management (Super Admin)", "url": "localhost:5173/super-admin/management-role", "k": "win", "bg": "#053e74"}, {"src": "assets/img/siyudis/04-kaprodi-dashboard.webp", "w": 1280, "h": 1416, "label": "Head of Study Program dashboard · empty state (design)", "url": "Figma · Kaprodi dashboard", "k": "win", "bg": "#003366"}, {"src": "assets/img/siyudis/05-kadep-dashboard.webp", "w": 1280, "h": 1416, "label": "Head of Department dashboard · empty state (design)", "url": "Figma · Kadep dashboard", "k": "win", "bg": "#003366"}, {"src": "assets/img/siyudis/06-manit-dashboard.webp", "w": 1280, "h": 1416, "label": "Manit dashboard · empty state (design)", "url": "Figma · Manit dashboard", "k": "win", "bg": "#003366"}]}, "pustaka": {"layout": "wins", "items": [{"src": "assets/img/pustaka/01-login-page.webp", "w": 1280, "h": 607, "label": "Login page", "url": "localhost:8080", "k": "win", "bg": "#f8f5fb"}, {"src": "assets/img/pustaka/02-add-a-new-book.webp", "w": 1280, "h": 607, "label": "Add a new book", "url": "localhost:8080", "k": "win", "bg": "#f8f5fb"}, {"src": "assets/img/pustaka/03-book-collection-list.webp", "w": 1280, "h": 607, "label": "Book collection list", "url": "localhost:8080", "k": "win", "bg": "#f8f5fb"}, {"src": "assets/img/pustaka/04-collection-after-editing-a-book.webp", "w": 1280, "h": 607, "label": "Collection after editing a book", "url": "localhost:8080", "k": "win", "bg": "#f8f5fb"}]}, "nomnom": {"layout": "phones", "items": [{"src": "assets/img/nomnom/01-ai-picker-start-screen.webp", "w": 414, "h": 1696, "label": "AI Picker · start screen", "url": "", "k": "phone", "bg": "#000000"}, {"src": "assets/img/nomnom/02-ai-recommendation-results.webp", "w": 390, "h": 1272, "label": "AI recommendation results", "url": "", "k": "phone", "bg": "#020000"}, {"src": "assets/img/nomnom/03-canteen-directory.webp", "w": 414, "h": 1650, "label": "Canteen directory", "url": "", "k": "phone", "bg": "#000000"}, {"src": "assets/img/nomnom/04-surprise-me.webp", "w": 390, "h": 1278, "label": "Surprise Me", "url": "", "k": "phone", "bg": "#030000"}]}};
@@ -117,19 +98,38 @@ function cardHTML(p){return `<article class="card work tilt" data-type="${p.type
 <a class="more" href="#p-${p.id}">View Case Study →</a></article>`}
 
 function home(){
-const c=CONTACT,L=(k,l)=>c[k]?`<li><a href="${esc(c[k])}" target="_blank" rel="noopener">${l}</a></li>`:`<li><span class="pill">${l}: coming soon</span></li>`;
+const c=CONTACT,sp=t=>[...t].map((ch,i)=>`<span class="lt" style="--i:${i}">${ch}</span>`).join("");
+const soc=[["linkedin","LinkedIn",c.linkedin],["gmail","Email",c.email],["github","GitHub",c.github]].filter(x=>x[2]);
+const socHTML=([k,l,u])=>`<li><a href="${esc(u)}"${k==="gmail"?"":' target="_blank" rel="noopener"'} aria-label="${l}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="${ICONS[k]}"/></svg></a></li>`;
 $("#app").innerHTML=`
-<div class="wrap" id="top"><div class="hero">
-<div><span class="eyebrow">UI/UX Designer + Frontend</span><h1 aria-label="Hi, I’m Nadhira!">Hi, I’m <em class="mark" aria-hidden="true">${[..."Nadhira!"].map(c=>`<span class="lt">${c}</span>`).join("")}</em></h1>
-<p class="tag">Designing thoughtful digital experiences, one idea at a time.</p>
-<p>I’m a UX/UI Designer with an interest in creating intuitive, meaningful, and user-centered digital experiences. I also enjoy exploring frontend development and bringing designs to life through code.</p>
-<p style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn p" href="#work">Explore My Work</a><a class="btn s" href="#contact">Get in Touch</a></p></div>
-<div class="arch"><div class="pic"><img src="assets/img/profile.webp" alt="Portrait of Nadhira Farra" width="560" height="700" fetchpriority="high"></div>${FL}<span class="sticker" data-cursor="Drag me">Design × Code</span></div>
+<div class="wrap" id="top"><div class="hx">
+<div class="stage">
+<i class="cn tl" aria-hidden="true"></i><i class="cn tr" aria-hidden="true"></i><i class="cn bl" aria-hidden="true"></i><i class="cn br" aria-hidden="true"></i>
+<h1 class="bigname" aria-label="Nadhira Farra">
+  <span class="nr" aria-hidden="true">${sp("Nadhira")}</span>
+  <span class="nl" aria-hidden="true">${sp("Farra")}</span>
+</h1>
+
+<div class="arch">
+  <div class="pic">
+    <img src="assets/img/profile.webp" alt="Portrait of Nadhira Farra" width="560" height="700" fetchpriority="high">
+  </div>
+  ${FL}
+  <span class="sticker" data-cursor="Drag me">Design × Code</span>
+</div>
+
+<ul class="soc l">${soc.slice(0,2).map(socHTML).join("")}</ul>
+<ul class="soc r">${soc.slice(2).map(socHTML).join("")}</ul>
+
+<span class="tick l" aria-hidden="true">01 / UI·UX</span>
+<span class="tick r" aria-hidden="true">02 / FRONTEND</span>
+</div>
+<p class="tag">Turning thoughtful ideas into meaningful digital experiences</p>
+<p class="ctas"><a class="btn p" href="#work">Explore My Work</a><a class="btn s" href="#contact">Get in Touch</a></p>
 </div></div>
-<div class="marq" aria-hidden="true"><div>${"User Research ✱ Wireframes ✱ Prototypes ✱ Design Systems ✱ Vue.js ✱ Laravel ✱ Figma ✱ ".repeat(6)}</div></div>
+<div class="marq" aria-hidden="true"><div>${"UX/UI Design ✱ User Research ✱ Creative Thinking ✱ Interaction Design ✱ Wireframing ✱ Prototyping ✱ Visual Design ✱ Frontend Development ✱ ".repeat(6)}</div></div>
 <section id="about"><div class="wrap"><div class="band about"><figure class="polaroid"><img src="assets/img/profile-formal.webp" alt="Nadhira Farra speaking at a campus event" width="520" height="650" loading="lazy"><figcaption>Nadhira Farra</figcaption></figure><span class="eyebrow">About</span><h2>A Little About Me</h2>
-<p>I’m an Applied Bachelor’s student in Software Engineering Technology at Universitas Gadjah Mada, focused on UX/UI design and frontend development.</p>
-<p>I turn research into simple, intuitive interfaces, from user flows and wireframes to Figma prototypes and working Vue.js and Laravel code.</p>
+<p>I love turning complex ideas into simple, meaningful experiences. With a curiosity for how people think, interact, and connect with technology, I enjoy exploring the sweet spot between thoughtful design and functional development. For me, great digital experiences aren’t just about how they look, but how they make people feel and what they make possible.</p>
 <p><strong>Interested in:</strong></p><ul class="chips"><li>User Experience Design</li><li>User Research</li><li>UI Design</li><li>Product Design</li></ul>
 <p><a class="btn p" href="${CV_URL}" target="_blank" rel="noopener" data-cv>Preview CV ↗</a></p></div></div></section>
 <section id="education"><div class="wrap"><span class="eyebrow">Studies</span><h2>Education</h2>
@@ -152,10 +152,25 @@ $("#app").innerHTML=`
 <p class="muted">Design projects come first, followed by development projects that show I can build what I design. Each project’s visual style follows its own brief; this website is my own UI direction.</p>
 <div class="filters" id="filters"><button class="on" data-f="all">All</button><button data-f="ui">UX/UI Design</button><button data-f="dev">Development</button></div>
 <div class="grid2" id="cards">${P.map(cardHTML).join("")}</div></div></section>
-<section id="contact"><div class="wrap"><div class="band contact"><span class="eyebrow">Contact</span><h2>Let’s Create Something Meaningful!</h2>
-<p style="max-width:560px;margin:0 auto">I’m always excited to explore new ideas, learn from different experiences, and create meaningful digital products. Whether you have a project, collaboration opportunity, or just want to connect, feel free to reach out!</p>
-<div class="dock">${[["gmail","Email",c.email?"mailto:"+c.email:""],["linkedin","LinkedIn",c.linkedin],["github","GitHub",c.github]].filter(x=>x[2]).map(([k,l,u])=>`<a class="app ${k}" href="${esc(u)}"${k==="gmail"?"":' target="_blank" rel="noopener"'} aria-label="${l}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="${ICONS[k]}"/></svg><span class="tip">${l}</span></a>`).join("")}</div>
-<p class="muted">Let’s connect.</p></div></div></section>`;
+<section id="contact">
+  <div class="wrap">
+    <div class="band contact">
+      <span class="eyebrow">Get in Touch</span>
+      <h2>Let's Make Something Happen.</h2>
+      <p style="max-width:560px;margin:0 auto">
+        Have an idea in mind, a project to discuss, or simply want to connect?
+        I'm always open to interesting conversations and new possibilities.
+        My inbox is just a click away.
+      </p>
+
+      <div class="dock">
+        ${[["gmail","Email",c.email?"mailto:"+c.email:""],["linkedin","LinkedIn",c.linkedin],["github","GitHub",c.github]].filter(x=>x[2]).map(([k,l,u])=>`<a class="app ${k}" href="${esc(u)}"${k==="gmail"?"":' target="_blank" rel="noopener"'} aria-label="${l}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="${ICONS[k]}"/></svg><span class="tip">${l}</span></a>`).join("")}
+      </div>
+
+      <p class="muted">Looking forward to hearing from you.</p>
+    </div>
+  </div>
+</section>`;
 $("#filters").onclick=e=>{const f=e.target.dataset.f;if(!f)return;
 document.querySelectorAll("#filters button").forEach(b=>b.classList.toggle("on",b===e.target));
 document.querySelectorAll("#cards .card").forEach(c=>c.style.display=(f==="all"||c.dataset.type===f)?"":"none")};
@@ -171,7 +186,7 @@ $("#app").innerHTML=`<div class="wrap proj"><a class="back" href="#work">← Bac
 <div class="meta"><span class="pill">Role: ${esc(p.role)}</span>${p.origin?`<span class="pill">Brief: ${esc(p.origin)}</span>`:""}${p.ctx?`<span class="pill">${esc(p.ctx)}</span>`:""}${p.status?`<span class="pill">Status: ${esc(p.status)}</span>`:""}</div>
 <h2>Project Overview</h2>${p.over.map(t=>`<p>${esc(t)}</p>`).join("")}
 ${p.challenge?`<h2>The Challenge</h2><p>${esc(p.challenge)}</p>`:""}
-${PROC[p.id]?`<h2>Design Process</h2><ol class="proc">${PROC[p.id].map(x=>`<li>${x}</li>`).join("")}</ol>`:""}${p.deep?deepHTML(p.deep):""}<h2>My Contributions</h2>${ul(p.contrib)}
+${PROC[p.id]?`<h2>Design Process</h2><ol class="proc">${PROC[p.id].map(x=>`<li>${x}</li>`).join("")}</ol>`:""}<h2>My Contributions</h2>${ul(p.contrib)}
 ${p.features?`<h2>Key Features</h2>${ul(p.features)}`:""}
 ${p.stack?`<h2>Technology Stack</h2><ul class="chips">${p.stack.map(x=>`<li>${x}</li>`).join("")}</ul>`:""}
 <h2>${p.showTitle||"Design Showcase"}</h2>
@@ -208,7 +223,7 @@ if(w){const r=w.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.client
 S("--ry",((x-.5)*10).toFixed(2)+"deg");S("--rx",((.5-y)*8).toFixed(2)+"deg");S("--gx",x*100+"%");S("--gy",y*100+"%");S("--px",((x-.5)*2).toFixed(2));S("--py",((y-.5)*2).toFixed(2))}
 const b=e.target.closest&&e.target.closest(".btn");
 if(b){const r=b.getBoundingClientRect();b.style.translate=(e.clientX-r.left-r.width/2)*.18+"px "+(e.clientY-r.top-r.height/2)*.28+"px"}
-const h=document.querySelector(".hero");
+const h=document.querySelector(".hx");
 if(h){h.style.setProperty("--mx",((e.clientX/innerWidth-.5)*2).toFixed(2));h.style.setProperty("--my",((e.clientY/innerHeight-.5)*2).toFixed(2))}});
 document.addEventListener("mouseout",e=>{const t=e.target.closest&&e.target.closest(".tilt,.btn");
 if(t&&!t.contains(e.relatedTarget)){["--rx","--ry","--px","--py"].forEach(k=>t.style.removeProperty(k));t.style.translate=""}});
@@ -230,7 +245,7 @@ m.onclick=ev=>{if(ev.target===m||ev.target.tagName==="BUTTON")m.remove()};docume
 function scramble(el){if(!el||matchMedia("(prefers-reduced-motion:reduce)").matches)return;
 const t=el.dataset.t||(el.dataset.t=el.textContent),g="<>/[]{}=+*#%&";let i=0;clearInterval(el._s);
 el._s=setInterval(()=>{el.textContent=t.split("").map((c,j)=>j<i||c===" "?c:g[Math.random()*g.length|0]).join("");if(i++>=t.length){clearInterval(el._s);el.textContent=t}},28)}
-function hud(){const e=document.querySelector(".hero .eyebrow");if(e&&!e._d){e._d=1;scramble(e)}tick()}
+function hud(){const e=document.querySelector(".hx .eyebrow");if(e&&!e._d){e._d=1;scramble(e)}tick()}
 function tick(){const c=document.getElementById("clock");if(c)c.textContent=new Date().toLocaleTimeString("en-GB",{timeZone:"Asia/Jakarta"})}
 setInterval(tick,1000);
 document.addEventListener("mouseover",e=>{const w=e.target.closest&&e.target.closest(".work");if(w&&!w.contains(e.relatedTarget))scramble(w.querySelector("h3"))});
