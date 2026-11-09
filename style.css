@@ -298,3 +298,101 @@ em.mark{white-space:nowrap}
 @media(max-width:560px){.dock{gap:14px;padding:16px 18px 12px}.app{width:64px;height:64px;border-radius:18px}}
 @media(hover:none){.app:active{transform:scale(1.12)}}
 @media(prefers-reduced-motion:reduce){.app,.app .tip{transition:none}}
+
+/* v15: hero — big split name, perspective grid floor, HUD details (replaces .hero) */
+html{overflow-x:hidden}
+.hx{position:relative;text-align:center;padding:30px 0 8px}
+.hx-top{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
+.hx-top .eyebrow,.hx-top .hud{margin:0}
+.hx-clock{font:500 .78rem ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--muted);letter-spacing:.04em;padding:2px 4px}
+
+.stage{position:relative;isolation:isolate;overflow:clip;display:grid;place-items:center;
+  width:100vw;margin:10px calc(50% - 50vw) 0;min-height:clamp(480px,40vw,600px)}
+.stage::before{ 
+  content:"";position:absolute;z-index:-2;left:-20%;right:-20%;bottom:0;height:72%;
+  background:
+    linear-gradient(color-mix(in srgb,var(--text) 22%,transparent) 1px,transparent 1px) 0 0/56px 56px,
+    linear-gradient(90deg,color-mix(in srgb,var(--text) 22%,transparent) 1px,transparent 1px) 0 0/56px 56px;
+  transform:perspective(620px) rotateX(62deg);transform-origin:50% 100%;
+  -webkit-mask:linear-gradient(to top,#000 5%,transparent 88%);mask:linear-gradient(to top,#000 5%,transparent 88%)}
+.stage::after{ /* soft theme-colored glow behind the portrait */
+  content:"";position:absolute;z-index:-1;left:calc(50% + var(--mx,0)*34px);top:46%;width:min(560px,74vw);aspect-ratio:1;translate:-50% -50%;
+  background:radial-gradient(circle,color-mix(in srgb,var(--primary) 34%,transparent),transparent 66%);filter:blur(36px);pointer-events:none}
+
+/* corner brackets */
+.cn{position:absolute;width:22px;height:22px;border:0 solid var(--text);opacity:.7;pointer-events:none;z-index:3}
+.cn.tl{top:14px;left:max(14px,3vw);border-width:2px 0 0 2px}
+.cn.tr{top:14px;right:max(14px,3vw);border-width:2px 2px 0 0}
+.cn.bl{bottom:14px;left:max(14px,3vw);border-width:0 0 2px 2px}
+.cn.br{bottom:14px;right:max(14px,3vw);border-width:0 2px 2px 0}
+
+/* split name */
+.bigname{position:absolute;inset:0;margin:0;z-index:1;display:flex;justify-content:space-between;align-items:center;
+  padding:0 clamp(14px,3.4vw,60px);font-size:clamp(44px,9.4vw,150px);font-weight:800;line-height:.9;letter-spacing:-.05em;
+  color:var(--text);pointer-events:none;text-align:left}
+.bigname .nl,.bigname .nr{display:block;white-space:nowrap}
+.bigname .nl{translate:calc(var(--mx,0)*-10px) calc(var(--my,0)*-4px)}
+.bigname .nr{color:var(--primary);translate:calc(var(--mx,0)*10px) calc(var(--my,0)*-4px)}
+.bigname .dot{color:var(--text);font-weight:800}
+.bigname .lt{pointer-events:auto;animation:rise .8s cubic-bezier(.2,.8,.2,1) backwards;animation-delay:calc(var(--i)*60ms + 120ms)}
+@keyframes rise{from{opacity:0;transform:translateY(46px) rotate(4deg)}}
+
+.hx .arch{position:relative;z-index:2;width:clamp(210px,24.5vw,360px);max-width:none;margin:0;
+  translate:calc(var(--mx,0)*6px) calc(var(--my,0)*6px);transition:translate .2s ease-out}
+.hx .arch .sticker{left:auto;right:-14%;bottom:14%}
+.hx .fl{translate:calc(var(--mx,0)*22px) calc(var(--my,0)*22px)}
+
+/* floating social chips */
+.soc{position:absolute;z-index:3;top:72%;display:flex;gap:10px;margin:0;padding:0;list-style:none}
+.soc.l{left:clamp(16px,15vw,270px)}
+.soc.r{right:clamp(16px,15vw,270px)}
+.soc a{display:grid;place-items:center;width:48px;height:48px;border-radius:50%;color:var(--text);
+  background:color-mix(in srgb,var(--card) 80%,transparent);backdrop-filter:blur(8px);
+  border:2px solid var(--text);box-shadow:3px 3px 0 var(--text);
+  transition:transform .22s cubic-bezier(.3,1.6,.5,1),background .2s,color .2s,box-shadow .2s}
+.soc a:hover,.soc a:focus-visible{background:var(--primary);color:var(--onp);transform:translate(-2px,-4px) rotate(-6deg);box-shadow:5px 6px 0 var(--text)}
+.soc svg{width:20px;height:20px;fill:currentColor}
+
+/* mono section tags */
+.tick{position:absolute;z-index:3;bottom:20px;font:600 .72rem ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.08em;color:var(--muted);display:flex;align-items:center;gap:10px}
+.tick::before{content:"";width:34px;height:2px;background:var(--primary)}
+.tick.l{left:max(44px,calc(3vw + 30px))}
+.tick.r{right:max(44px,calc(3vw + 30px));flex-direction:row-reverse}
+
+.hx .tag{margin:22px auto 0;max-width:560px;text-wrap:balance;font-size:clamp(1rem,2vw,1.2rem)}
+.ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:20px 0 0}
+
+/* bigger marquee band */
+.marq{font-size:clamp(1.4rem,3.6vw,2.7rem);letter-spacing:-.03em;padding:14px 0}
+
+@media(max-width:700px){
+  .stage{min-height:clamp(560px,150vw,720px)}
+  .bigname{flex-direction:column;justify-content:space-between;align-items:center;padding:20px 0 76px;font-size:clamp(58px,21vw,118px);text-align:center}
+  .hx .arch{width:54vw}
+  .hx .arch .sticker{right:-10%}
+  .soc{top:auto;bottom:16px}
+  .soc a{width:44px;height:44px}
+  .soc.l{left:calc(50% - 77px);right:auto}
+  .soc.r{left:calc(50% + 33px);right:auto}
+  .tick{display:none}
+}
+
+/* Perbaikan ukuran ikon SVG contact dock */
+.dock .app svg,
+.contact svg {
+  width: 24px !important;
+  height: 24px !important;
+  max-width: 24px !important;
+  max-height: 24px !important;
+  display: block;
+}
+
+/* Memastikan wrapper tombol icon tidak meluber */
+.dock .app {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+}
+@media(prefers-reduced-motion:reduce){.bigname .lt{animation:none}.hx .arch{transition:none}}
