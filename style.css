@@ -239,27 +239,329 @@ h2::after{content:"";display:block;height:10px;width:min(150px,60%);margin-top:6
 .proj h2::after{display:none}
 #skills .grid2 .card:last-child:nth-child(odd){grid-column:1/-1}
 
-/* v13: education — hanging student card */
-.edgrid{display:grid;grid-template-columns:1fr 310px;gap:48px;align-items:start;margin-top:28px}
-.edtxt h3{font-weight:800;font-size:clamp(1.4rem,3vw,1.9rem);letter-spacing:-.02em;max-width:22ch}
-.edtxt p{max-width:46ch}
-.edinst{font-size:1.1rem;margin:0 0 16px}
-.ids{position:relative;justify-self:center;width:100%;max-width:310px;margin-top:-44px}
-.swing{position:relative;transform-origin:50% 0;padding-top:70px}
-.strap{position:absolute;top:0;left:50%;width:132px;margin-left:-66px;z-index:2;overflow:visible}
-.idc{position:relative;background:var(--card);border:2px solid var(--text);border-radius:26px;box-shadow:8px 8px 0 var(--text);transform:rotate(2.5deg);overflow:hidden}
-.slot{position:absolute;top:10px;left:50%;width:46px;height:10px;margin-left:-23px;border:2px solid var(--text);border-radius:99px;background:var(--bg);z-index:2}
-.idh{display:flex;align-items:center;gap:12px;background:var(--primary);color:var(--onp);padding:28px 18px 12px;border-bottom:2px solid var(--text)}
-.idh b{display:block;font-size:.98rem;line-height:1.2}
-.idh div span{display:block;font-size:.8rem;opacity:.9}
-.ulogo{flex:none;width:58px;height:58px;object-fit:contain;filter:drop-shadow(2px 2px 0 var(--text))}
-.idb{padding:20px 18px 22px;display:grid;justify-items:start;gap:2px}
-.idpic{width:112px;aspect-ratio:4/5;border:2px solid var(--text);border-radius:999px 999px 14px 14px;overflow:hidden;background:var(--lilac);margin-bottom:14px}
-.idpic img{display:block;width:100%;height:100%;object-fit:cover}
-.idb h3{margin:0;font-weight:800;font-size:1.15rem;line-height:1.25;letter-spacing:-.01em}
-.idb p{margin:0;color:var(--muted);font-size:.9rem}
-.sticker.gpa{left:auto;right:-14px;bottom:auto;top:calc(70px + 118px);transform:rotate(8deg);z-index:4;font-size:1.05rem;line-height:1.2;text-align:center}
-.sticker.gpa small{font-weight:500;font-size:.72rem;opacity:.9}
+
+/* =========================================
+   EDUCATION — HANGING STUDENT CARD
+   ========================================= */
+
+.edgrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 260px;
+  gap: 42px;
+  align-items: center;
+  margin-top: 28px;
+}
+
+.edtxt {
+  min-width: 0;
+}
+
+.edtxt h3 {
+  font-weight: 800;
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  letter-spacing: -.02em;
+  max-width: 22ch;
+}
+
+.edtxt p {
+  max-width: 46ch;
+}
+
+.edinst {
+  font-size: 1.1rem;
+  margin: 0 0 16px;
+}
+
+/* Card hanging area */
+.ids {
+  position: relative;
+  justify-self: center;
+  width: 100%;
+  max-width: 250px;
+  margin-top: -20px;
+}
+
+.swing {
+  position: relative;
+  transform-origin: 50% 0;
+  padding-top: 62px;
+  transition: transform .3s ease;
+}
+
+.swing:hover {
+  transform: rotate(1.5deg);
+}
+
+/* Hanging strap */
+.strap {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 110px;
+  margin-left: -55px;
+  z-index: 2;
+  overflow: visible;
+}
+
+/* Main card */
+.idc {
+  position: relative;
+  background: var(--card);
+  border: 2px solid var(--text);
+  border-radius: 22px 22px 32px 20px;
+  box-shadow: 6px 7px 0 var(--text);
+  transform: rotate(2deg);
+  overflow: visible;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.idc:hover {
+  transform: rotate(0deg) translateY(-3px);
+  box-shadow: 9px 10px 0 var(--text);
+}
+
+/* Card slot */
+.slot {
+  position: absolute;
+  top: 9px;
+  left: 50%;
+  width: 38px;
+  height: 8px;
+  margin-left: -19px;
+  border: 2px solid var(--text);
+  border-radius: 99px;
+  background: var(--bg);
+  z-index: 3;
+}
+
+/* University header */
+.idh {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 83px;
+  padding: 24px 12px 12px;
+  background: var(--primary);
+  color: var(--onp);
+  border-radius: 20px 20px 28px 10px;
+  border-bottom: 2px solid var(--text);
+}
+
+.idh::after {
+  content: "✳";
+  position: absolute;
+  top: 9px;
+  right: 11px;
+  font-size: .85rem;
+  opacity: .8;
+}
+
+.ulogo {
+  flex: none;
+  width: 39px;
+  height: 39px;
+  object-fit: contain;
+  filter: drop-shadow(1px 2px 0 var(--text));
+}
+
+.idh b {
+  display: block;
+  font-size: .78rem;
+  line-height: 1.2;
+}
+
+.idh div span {
+  display: block;
+  font-size: .65rem;
+  opacity: .9;
+}
+
+/* Card information */
+.idb {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 20px 13px 22px;
+  text-align: center;
+}
+
+.idb::before {
+  content: "STUDENT CARD";
+  position: absolute;
+  top: 9px;
+  left: 13px;
+  font-size: .48rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+  color: var(--muted);
+}
+
+/* Photo */
+.idpic {
+  position: relative;
+  width: 94px;
+  height: 112px;
+  padding: 4px;
+  margin: 13px auto 10px;
+  background: #fff;
+  border: 2px solid var(--text);
+  border-radius: 7px;
+  box-shadow: 3px 3px 0 var(--lilac);
+  transform: rotate(-3deg);
+}
+
+.idpic::after {
+  content: "✿";
+  position: absolute;
+  right: -11px;
+  top: -11px;
+  display: grid;
+  place-items: center;
+  width: 23px;
+  height: 23px;
+  background: var(--lilac);
+  color: var(--text);
+  border: 1.5px solid var(--text);
+  border-radius: 50%;
+  font-size: .8rem;
+}
+
+.idpic img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 3px;
+}
+
+/* Name and study program */
+.idb h3 {
+  max-width: 200px;
+  margin: 4px 0 2px;
+  font-size: .88rem;
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: -.01em;
+}
+
+.idb p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .68rem;
+  line-height: 1.45;
+}
+
+/* GPA sticker */
+.sticker.gpa {
+  left: auto;
+  right: -15px;
+  top: 145px;
+  bottom: auto;
+  z-index: 4;
+  padding: 9px 10px;
+  background: #F5D66E;
+  color: #342844;
+  border: 2px solid #342844;
+  border-radius: 48% 42% 48% 40%;
+  box-shadow: 3px 3px 0 #342844;
+  transform: rotate(9deg);
+  font-size: .85rem;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.sticker.gpa small {
+  display: block;
+  font-size: .58rem;
+  font-weight: 600;
+  opacity: .9;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .edgrid {
+    grid-template-columns: minmax(0, 1fr) 190px;
+    gap: 24px;
+  }
+
+  .ids {
+    max-width: 190px;
+  }
+
+  .swing {
+    padding-top: 52px;
+  }
+
+  .strap {
+    width: 90px;
+    margin-left: -45px;
+  }
+
+  .idc {
+    border-radius: 18px 18px 26px 17px;
+  }
+
+  .idh {
+    min-height: 72px;
+    gap: 6px;
+    padding: 20px 8px 9px;
+  }
+
+  .ulogo {
+    width: 30px;
+    height: 30px;
+  }
+
+  .idh b {
+    font-size: .65rem;
+  }
+
+  .idh div span {
+    font-size: .55rem;
+  }
+
+  .idb {
+    padding: 17px 9px 18px;
+  }
+
+  .idpic {
+    width: 78px;
+    height: 94px;
+  }
+
+  .idb h3 {
+    font-size: .72rem;
+  }
+
+  .idb p {
+    font-size: .58rem;
+  }
+
+  .sticker.gpa {
+    right: -12px;
+    top: 125px;
+    font-size: .72rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .edgrid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .ids {
+    width: 100%;
+    max-width: 220px;
+    margin: 0 auto;
+  }
+}
+
 @keyframes hang{0%{transform:rotate(0)}22%{transform:rotate(4.5deg)}48%{transform:rotate(-3deg)}72%{transform:rotate(1.6deg)}100%{transform:rotate(0)}}
 .ids:hover .swing,.ids:focus-within .swing{animation:hang 1.5s ease-out}
 @media(prefers-reduced-motion:reduce){.ids:hover .swing,.ids:focus-within .swing{animation:none}}
@@ -396,3 +698,65 @@ html{overflow-x:hidden}
   height: 44px;
 }
 @media(prefers-reduced-motion:reduce){.bigname .lt{animation:none}.hx .arch{transition:none}}
+/* v15: futuristic layer (sticker x HUD) */
+body{background-image:radial-gradient(color-mix(in srgb,var(--text) 16%,transparent) 1px,transparent 1.3px),linear-gradient(color-mix(in srgb,var(--text) 5%,transparent) 1px,transparent 1px),linear-gradient(90deg,color-mix(in srgb,var(--text) 5%,transparent) 1px,transparent 1px);background-size:26px 26px,130px 130px,130px 130px}
+/* hero: orbit rings, scan line, telemetry */
+.orbit{position:absolute;left:50%;top:50%;z-index:0;width:min(470px,74vw);aspect-ratio:1;translate:calc(-50% + var(--mx,0) * -12px) calc(-50% + var(--my,0) * -8px);border-radius:50%;border:2px dashed color-mix(in srgb,var(--primary) 60%,transparent);animation:spin 46s linear infinite;pointer-events:none}
+.orbit::before{content:"";position:absolute;top:-8px;left:50%;width:14px;height:14px;margin-left:-7px;border-radius:50%;background:var(--primary);border:2px solid var(--text);box-shadow:0 0 16px var(--primary)}
+.orbit::after{content:"";position:absolute;inset:11%;border-radius:50%;border:1px solid color-mix(in srgb,var(--text) 28%,transparent);animation:spin 28s linear infinite reverse}
+.pic::after{content:"";position:absolute;left:0;right:0;top:-18%;height:18%;pointer-events:none;background:linear-gradient(transparent,color-mix(in srgb,var(--primary) 38%,transparent));border-bottom:1.5px solid rgba(255,255,255,.8);animation:scanY 5s cubic-bezier(.5,0,.5,1) infinite}
+@keyframes scanY{0%{top:-18%}60%,100%{top:102%}}
+.tele{position:absolute;z-index:3;top:16px;font:600 .72rem ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.08em;color:var(--muted);white-space:nowrap}
+.tele.tl{left:calc(max(14px,3vw) + 34px)}.tele.tr{right:calc(max(14px,3vw) + 34px)}
+.tele b{display:inline-block;min-width:3ch;text-align:right;color:var(--text);font-weight:700}
+/* status chip */
+.hudchip{position:fixed;left:16px;bottom:calc(env(safe-area-inset-bottom,0px) + 16px);z-index:35;display:flex;align-items:center;gap:10px;padding:7px 14px;border:2px solid var(--text);border-radius:99px;background:color-mix(in srgb,var(--card) 82%,transparent);backdrop-filter:blur(8px);font:700 .72rem ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.08em;box-shadow:3px 3px 0 var(--text);pointer-events:none}
+.hudchip i{width:8px;height:8px;border-radius:50%;background:#3fb97a;animation:ping 2s infinite}
+.hudchip b{color:var(--primary)}.hudchip em{font-style:normal;color:var(--muted);min-width:4ch;text-align:right}
+/* reveal (replays on every entry); no clip-path on the observed element so it can never get stuck hidden */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .6s,transform .7s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+/* target lock + card scan + glow */
+.tilt{outline:2px dashed transparent;outline-offset:3px;transition:transform .15s ease-out,box-shadow .25s,outline-color .2s,outline-offset .25s}
+.tilt:hover{outline-color:var(--primary);outline-offset:8px}
+.work .thumb::after{content:"";position:absolute;left:0;right:0;top:-30%;height:30%;opacity:0;pointer-events:none;background:linear-gradient(transparent,color-mix(in srgb,var(--primary) 38%,transparent),transparent)}
+.work:hover .thumb::after{opacity:1;animation:scanY2 1.2s linear}
+@keyframes scanY2{from{top:-30%}to{top:100%}}
+.npill{box-shadow:0 0 18px color-mix(in srgb,var(--primary) 45%,transparent)}
+.btn.p:hover{box-shadow:var(--sh),0 0 28px color-mix(in srgb,var(--primary) 55%,transparent)}
+main{counter-reset:sec}section{counter-increment:sec}
+section .eyebrow::after{content:" // 0" counter(sec);opacity:.55}
+
+@media(max-width:760px){.hudchip{display:none}.tele{display:none}}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.orbit,.orbit::after,.pic::after{animation:none}.work:hover .thumb::after{animation:none}}
+
+/* v16: dark-first futuristic look (glow edges instead of hard shadows, glass nav, gradient type) */
+::selection{background:var(--primary);color:var(--onp)}
+:root[data-theme="dark"]{--bg:#0b0912;--card:#14101f;--lav:#1a1428;--lilac:#261d3d;--line:#2a2140;--glow:#9d7bff;--sh:0 14px 44px -22px color-mix(in srgb,var(--glow) 70%,transparent)}
+:root[data-theme="dark"] body{background-image:
+ radial-gradient(900px 520px at 10% -6%,color-mix(in srgb,var(--glow) 24%,transparent),transparent 62%),
+ radial-gradient(820px 520px at 100% 38%,color-mix(in srgb,#4cc9f0 9%,transparent),transparent 62%),
+ radial-gradient(color-mix(in srgb,var(--text) 14%,transparent) 1px,transparent 1.3px),
+ linear-gradient(color-mix(in srgb,var(--text) 4%,transparent) 1px,transparent 1px),
+ linear-gradient(90deg,color-mix(in srgb,var(--text) 4%,transparent) 1px,transparent 1px);
+ background-size:auto,auto,26px 26px,130px 130px,130px 130px;background-attachment:fixed,fixed,scroll,scroll,scroll}
+:root[data-theme="dark"] body::after{background:radial-gradient(460px circle at var(--sx,50%) var(--sy,25%),color-mix(in srgb,var(--glow) 26%,transparent),transparent 70%)}
+:root[data-theme="dark"] body>header{background:color-mix(in srgb,var(--bg) 62%,transparent);backdrop-filter:blur(16px) saturate(150%);border-bottom-color:color-mix(in srgb,var(--glow) 28%,transparent)}
+/* thin glowing edges on every container */
+:root[data-theme="dark"] :is(.card,.shot,.note,.pill,.filters button,.theme,.thumb,.win,.pbody,.arch,.polaroid,.idcard,.dock,.app,.band,.hudchip,.proc li,.cvb,.eyebrow,.btn,.gpa,.sticker,.hole,.ugm,.bbar){border-color:color-mix(in srgb,var(--glow) 48%,transparent)}
+:root[data-theme="dark"] :is(.card,.win,.polaroid,.idcard,.dock,.band,.hudchip,.proc li,.arch,.gpa,.sticker,.app,.cvb,.note,.shot,.btn,.pbody){box-shadow:0 0 0 1px color-mix(in srgb,var(--glow) 10%,transparent),0 18px 48px -26px color-mix(in srgb,var(--glow) 78%,transparent)}
+:root[data-theme="dark"] .tilt:hover,:root[data-theme="dark"] .work:hover,:root[data-theme="dark"] .app:hover,:root[data-theme="dark"] .btn:hover{box-shadow:0 0 0 1px var(--glow),0 22px 60px -22px var(--glow)}
+:root[data-theme="dark"] .btn.p{background:linear-gradient(135deg,var(--primary),color-mix(in srgb,var(--glow) 80%,#fff))}
+:root[data-theme="dark"] .band,:root[data-theme="dark"] .card{background:linear-gradient(160deg,color-mix(in srgb,var(--glow) 9%,var(--card)),var(--card) 55%)}
+:root[data-theme="dark"] .marq{border-color:color-mix(in srgb,var(--glow) 55%,transparent);box-shadow:0 0 46px -10px var(--glow)}
+:root[data-theme="dark"] .bigname .lt{background:linear-gradient(180deg,#fff 10%,color-mix(in srgb,var(--glow) 62%,#fff));-webkit-background-clip:text;background-clip:text;color:transparent}
+:root[data-theme="dark"] .bigname{filter:drop-shadow(0 0 26px color-mix(in srgb,var(--glow) 38%,transparent))}
+:root[data-theme="dark"] h2::after{filter:drop-shadow(0 0 6px var(--glow))}
+:root[data-theme="dark"] .orbit::before{box-shadow:0 0 22px var(--glow)}
+:root[data-theme="dark"] .cn{border-color:var(--glow);opacity:.9}
+
+/* student card in dark mode: same glowing edge as the other containers */
+:root[data-theme="dark"] .idc{border-color:color-mix(in srgb,var(--glow) 55%,transparent);box-shadow:0 0 0 1px color-mix(in srgb,var(--glow) 10%,transparent),0 18px 48px -24px color-mix(in srgb,var(--glow) 80%,transparent)}
+:root[data-theme="dark"] .idc:hover{box-shadow:0 0 0 1px var(--glow),0 24px 60px -22px var(--glow)}
+:root[data-theme="dark"] .idh{background:linear-gradient(135deg,var(--primary),color-mix(in srgb,var(--glow) 80%,#fff));border-bottom-color:color-mix(in srgb,var(--glow) 55%,transparent);color:#1d1726;backdrop-filter:none}
+:root[data-theme="dark"] .idh b,:root[data-theme="dark"] .idh span{color:#1d1726}

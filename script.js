@@ -6,7 +6,7 @@ const PROC={
 "gears-up":["Content structure","Navigation","Page layouts","Visual components"]
 };
 const ICONS={"gmail": "M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z", "linkedin": "M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z", "github": "M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"};
-const CONTACT={email:"mailto:nadhiraafas@gmail.com",linkedin:"https://www.linkedin.com/in/nadhira-farra-aisya-46a2b8326/",github:"https://github.com/nadhirafas"};
+const CONTACT={email:"nadhiraafas@gmail.com",linkedin:"https://www.linkedin.com/in/nadhira-farra-aisya-46a2b8326/",github:"https://github.com/nadhirafas"};
 const LINKS={gears:"https://www.figma.com/design/VhwgdgU66b9TlfJYz1B0yK/UI-Gears-Up-?node-id=0-1&p=f",pad_fig:"https://www.figma.com/design/pIazhUk6yra9hiGJ60nhrV/MonPAD?node-id=1439-21790",resto_fig:"https://www.figma.com/design/GFsIlkN8KTYSy0nNtQePsH/Restoran-Kita?node-id=151-1621&t=hvixESoRQsc4A6gQ-1"};
 
 const SKILLS=[
@@ -22,7 +22,7 @@ challenge:"Choosing what to eat can be challenging for students, especially when
 contrib:["Explored the food discovery problem among university students.","Developed the AI Food Recommender concept.","Participated in the validation process.","Refined the concept based on user feedback.","Designed the application interface and user experience."],
 features:["Personalized food recommendations","Budget-based recommendations","Distance and time considerations","Food preferences","Detailed restaurant and food information","Surprise Me instant recommendation feature"],
 shots:["Recommendation experience","Budget & distance filters","Food details","Surprise Me feature"],
-links:[["Figma","https://www.figma.com/design/cgih6Jlx4LFAHwysXQUQyP/UI-NomNom?node-id=2-464&t=sLzUmVbHErEa3Fc7-1"]],note:"NomNom is a design concept and prototype. The AI recommendation engine and live restaurant data are not implemented."},
+links:[["Figma","https://www.figma.com/design/cgih6Jlx4LFAHwysXQUQyP/UI-NomNom?node-id=2-464&t=sLzUmVbHErEa3Fc7-1"]],note:"NomNom is a design concept and prototype."},
 {id:"pad",origin:"Stakeholder requirements",n:"02",t:"MonPAD",sub:"Course Monitoring System",cat:"UX/UI Design · Dashboard Design",type:"ui",role:"UX/UI Designer",
 blurb:"A web-based platform designed to help students, teaching assistants, and lecturers monitor academic activities in one centralized system.",
 over:["MonPAD is a web-based course monitoring platform designed to centralize academic activity management. The system provides different interfaces for students, teaching assistants, and lecturers, allowing each role to access relevant academic information and monitor course activities."],
@@ -42,8 +42,8 @@ links:[["Figma",LINKS.resto_fig]]},
 blurb:"A company profile website designed to create a professional digital presence through a cohesive visual identity and intuitive user experience.",
 over:["A company profile website designed to establish a professional and engaging digital presence. The project focuses on creating a cohesive visual identity, clear information structure, and intuitive navigation to help visitors understand the company and its services."],
 contrib:["Designed the website interface and page layouts.","Developed the visual direction and design elements.","Organized content structure and navigation.","Created consistent visual components across website pages.","Refined the overall browsing experience."],
-shots:["Homepage","Company information","Services","Team section"],showTitle:"Design Showcase (Figma V2)",
-links:[["Figma V2 design",LINKS.gears]],note:""},
+shots:["Homepage","Company information","Services","Team section"],showTitle:"Design Showcase (Figma)",
+links:[["Figma",LINKS.gears]],note:""},
 {id:"siyudis",origin:"Stakeholder requirements",n:"05",t:"SiYudis",sub:"Graduation Information System",cat:"Frontend Development · Web Application",type:"dev",role:"Frontend Developer",status:"In Progress",
 blurb:"A centralized graduation management system developed to streamline academic administration through an integrated digital platform.",
 over:["SiYudis is a web-based graduation information system developed for the Department of Electrical Engineering and Informatics, UGM Vocational College.","The platform aims to centralize the graduation administration process, replacing fragmented workflows previously handled through Google Forms and WhatsApp with a more organized digital system."],
@@ -65,7 +65,7 @@ const FL='<svg class="fl" viewBox="0 0 100 100" aria-hidden="true"><g fill="curr
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const ul=(a,c="list")=>`<ul class="${c}">${a.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`;
 
-const SHOTS={"gears-up": {"layout": "wins", "items": [{"src": "assets/img/gears-up/01-homepage.webp", "w": 1280, "h": 4590, "label": "Homepage", "url": "Figma V2 · Homepage", "k": "win", "bg": "#ffffff"}, {"src": "assets/img/gears-up/02-about-company-information.webp", "w": 1280, "h": 2817, "label": "About / company information", "url": "Figma V2 · About", "k": "win", "bg": "#ffffff"}, {"src": "assets/img/gears-up/03-programs.webp", "w": 1280, "h": 2604, "label": "Programs", "url": "Figma V2 · Programs", "k": "win", "bg": "#dce3fe"}, {"src": "assets/img/gears-up/04-gallery.webp", "w": 1280, "h": 2763, "label": "Gallery", "url": "Figma V2 · Gallery", "k": "win", "bg": "#fff2f0"}]}, "pad": {"layout": "wins3", "items": [{"src": "assets/img/pad/01-student-dashboard.webp", "w": 745, "h": 752, "label": "Student dashboard", "url": "Role: Student", "k": "win", "bg": "#281c3b"}, {"src": "assets/img/pad/02-teaching-assistant-dashboard.webp", "w": 947, "h": 720, "label": "Teaching assistant dashboard", "url": "Role: Teaching Assistant", "k": "win", "bg": "#291b3d"}, {"src": "assets/img/pad/03-lecturer-dashboard.webp", "w": 848, "h": 737, "label": "Lecturer dashboard", "url": "Role: Lecturer", "k": "win", "bg": "#291b3d"}]}, "resto-kita": {"layout": "wins", "items": [{"src": "assets/img/resto-kita/01-customer-menu-browsing.webp", "w": 1280, "h": 2480, "label": "Customer · Menu browsing", "url": "Customer view", "k": "win", "bg": "#3f2623"}, {"src": "assets/img/resto-kita/06-customer-cart.webp", "w": 1280, "h": 2480, "label": "Customer · Cart", "url": "Customer view", "k": "win", "bg": "#3f2623"}, {"src": "assets/img/resto-kita/02-customer-order-list.webp", "w": 1280, "h": 1287, "label": "Customer · Order list (add more)", "url": "Customer view", "k": "win", "bg": "#3f2623"}, {"src": "assets/img/resto-kita/03-customer-checkout-payment.webp", "w": 1280, "h": 1239, "label": "Customer · Checkout & payment", "url": "Customer view", "k": "win", "bg": "#3f2623"}, {"src": "assets/img/resto-kita/04-customer-order-details.webp", "w": 1280, "h": 1464, "label": "Customer · Order details", "url": "Customer view", "k": "win", "bg": "#3f2623"}, {"src": "assets/img/resto-kita/05-admin-order-management.webp", "w": 1280, "h": 932, "label": "Admin · Order management", "url": "Admin view", "k": "win", "bg": "#533379"}]}, "siyudis": {"layout": "wins", "items": [{"src": "assets/img/siyudis/01-student-dashboard.webp", "w": 1280, "h": 607, "label": "Student dashboard", "url": "localhost:5173/dashboard", "k": "win", "bg": "#053e74"}, {"src": "assets/img/siyudis/02-staff-administration-dashboard.webp", "w": 1280, "h": 607, "label": "Staff administration dashboard", "url": "localhost:5173/super-admin/dashboard", "k": "win", "bg": "#053e74"}, {"src": "assets/img/siyudis/03-role-management-super-admin.webp", "w": 1280, "h": 607, "label": "Role management (Super Admin)", "url": "localhost:5173/super-admin/management-role", "k": "win", "bg": "#053e74"}, {"src": "assets/img/siyudis/04-kaprodi-dashboard.webp", "w": 1280, "h": 1416, "label": "Head of Study Program dashboard · empty state (design)", "url": "Figma · Kaprodi dashboard", "k": "win", "bg": "#003366"}, {"src": "assets/img/siyudis/05-kadep-dashboard.webp", "w": 1280, "h": 1416, "label": "Head of Department dashboard · empty state (design)", "url": "Figma · Kadep dashboard", "k": "win", "bg": "#003366"}, {"src": "assets/img/siyudis/06-manit-dashboard.webp", "w": 1280, "h": 1416, "label": "Manit dashboard · empty state (design)", "url": "Figma · Manit dashboard", "k": "win", "bg": "#003366"}]}, "pustaka": {"layout": "wins", "items": [{"src": "assets/img/pustaka/01-login-page.webp", "w": 1280, "h": 607, "label": "Login page", "url": "localhost:8080", "k": "win", "bg": "#f8f5fb"}, {"src": "assets/img/pustaka/02-add-a-new-book.webp", "w": 1280, "h": 607, "label": "Add a new book", "url": "localhost:8080", "k": "win", "bg": "#f8f5fb"}, {"src": "assets/img/pustaka/03-book-collection-list.webp", "w": 1280, "h": 607, "label": "Book collection list", "url": "localhost:8080", "k": "win", "bg": "#f8f5fb"}, {"src": "assets/img/pustaka/04-collection-after-editing-a-book.webp", "w": 1280, "h": 607, "label": "Collection after editing a book", "url": "localhost:8080", "k": "win", "bg": "#f8f5fb"}]}, "nomnom": {"layout": "phones", "items": [{"src": "assets/img/nomnom/01-ai-picker-start-screen.webp", "w": 414, "h": 1696, "label": "AI Picker · start screen", "url": "", "k": "phone", "bg": "#000000"}, {"src": "assets/img/nomnom/02-ai-recommendation-results.webp", "w": 390, "h": 1272, "label": "AI recommendation results", "url": "", "k": "phone", "bg": "#020000"}, {"src": "assets/img/nomnom/03-canteen-directory.webp", "w": 414, "h": 1650, "label": "Canteen directory", "url": "", "k": "phone", "bg": "#000000"}, {"src": "assets/img/nomnom/04-surprise-me.webp", "w": 390, "h": 1278, "label": "Surprise Me", "url": "", "k": "phone", "bg": "#030000"}]}};
+const SHOTS={"gears-up": {"layout": "wins", "items": [{"src": "assets/img/gears-up/01-homepage.webp", "w": 1280, "h": 4590, "label": "Homepage", "url": "Figma · Homepage", "k": "win", "bg": "#ffffff"}, {"src": "assets/img/gears-up/02-about-company-information.webp", "w": 1280, "h": 2817, "label": "About / company information", "url": "Figma · About", "k": "win", "bg": "#ffffff"}, {"src": "assets/img/gears-up/03-programs.webp", "w": 1280, "h": 2604, "label": "Programs", "url": "Figma · Programs", "k": "win", "bg": "#dce3fe"}, {"src": "assets/img/gears-up/04-gallery.webp", "w": 1280, "h": 2763, "label": "Gallery", "url": "Figma · Gallery", "k": "win", "bg": "#fff2f0"}]}, "pad": {"layout": "wins3", "items": [{"src": "assets/img/pad/01-student-dashboard.webp", "w": 745, "h": 752, "label": "Student dashboard", "url": "Role: Student", "k": "win", "bg": "#281c3b"}, {"src": "assets/img/pad/02-teaching-assistant-dashboard.webp", "w": 947, "h": 720, "label": "Teaching assistant dashboard", "url": "Role: Teaching Assistant", "k": "win", "bg": "#291b3d"}, {"src": "assets/img/pad/03-lecturer-dashboard.webp", "w": 848, "h": 737, "label": "Lecturer dashboard", "url": "Role: Lecturer", "k": "win", "bg": "#291b3d"}]}, "resto-kita": {"layout": "wins", "items": [{"src": "assets/img/resto-kita/01-customer-menu-browsing.webp", "w": 1280, "h": 2480, "label": "Customer · Menu browsing", "url": "Customer view", "k": "win", "bg": "#3f2623"}, {"src": "assets/img/resto-kita/06-customer-cart.webp", "w": 1280, "h": 2480, "label": "Customer · Cart", "url": "Customer view", "k": "win", "bg": "#3f2623"}, {"src": "assets/img/resto-kita/02-customer-order-list.webp", "w": 1280, "h": 1287, "label": "Customer · Order list (add more)", "url": "Customer view", "k": "win", "bg": "#3f2623"}, {"src": "assets/img/resto-kita/03-customer-checkout-payment.webp", "w": 1280, "h": 1239, "label": "Customer · Checkout & payment", "url": "Customer view", "k": "win", "bg": "#3f2623"}, {"src": "assets/img/resto-kita/04-customer-order-details.webp", "w": 1280, "h": 1464, "label": "Customer · Order details", "url": "Customer view", "k": "win", "bg": "#3f2623"}, {"src": "assets/img/resto-kita/05-admin-order-management.webp", "w": 1280, "h": 932, "label": "Admin · Order management", "url": "Admin view", "k": "win", "bg": "#533379"}]}, "siyudis": {"layout": "wins", "items": [{"src": "assets/img/siyudis/01-student-dashboard.webp", "w": 1280, "h": 607, "label": "Student dashboard", "url": "localhost:5173/dashboard", "k": "win", "bg": "#053e74"}, {"src": "assets/img/siyudis/02-staff-administration-dashboard.webp", "w": 1280, "h": 607, "label": "Staff administration dashboard", "url": "localhost:5173/super-admin/dashboard", "k": "win", "bg": "#053e74"}, {"src": "assets/img/siyudis/03-role-management-super-admin.webp", "w": 1280, "h": 607, "label": "Role management (Super Admin)", "url": "localhost:5173/super-admin/management-role", "k": "win", "bg": "#053e74"}, {"src": "assets/img/siyudis/04-kaprodi-dashboard.webp", "w": 1280, "h": 1416, "label": "Head of Study Program dashboard · empty state (design)", "url": "Figma · Kaprodi dashboard", "k": "win", "bg": "#003366"}, {"src": "assets/img/siyudis/05-kadep-dashboard.webp", "w": 1280, "h": 1416, "label": "Head of Department dashboard · empty state (design)", "url": "Figma · Kadep dashboard", "k": "win", "bg": "#003366"}, {"src": "assets/img/siyudis/06-manit-dashboard.webp", "w": 1280, "h": 1416, "label": "Manit dashboard · empty state (design)", "url": "Figma · Manit dashboard", "k": "win", "bg": "#003366"}]}, "pustaka": {"layout": "wins", "items": [{"src": "assets/img/pustaka/01-login-page.webp", "w": 1280, "h": 607, "label": "Login page", "url": "localhost:8080", "k": "win", "bg": "#f8f5fb"}, {"src": "assets/img/pustaka/02-add-a-new-book.webp", "w": 1280, "h": 607, "label": "Add a new book", "url": "localhost:8080", "k": "win", "bg": "#f8f5fb"}, {"src": "assets/img/pustaka/03-book-collection-list.webp", "w": 1280, "h": 607, "label": "Book collection list", "url": "localhost:8080", "k": "win", "bg": "#f8f5fb"}, {"src": "assets/img/pustaka/04-collection-after-editing-a-book.webp", "w": 1280, "h": 607, "label": "Collection after editing a book", "url": "localhost:8080", "k": "win", "bg": "#f8f5fb"}]}, "nomnom": {"layout": "phones", "items": [{"src": "assets/img/nomnom/01-ai-picker-start-screen.webp", "w": 414, "h": 1696, "label": "AI Picker · start screen", "url": "", "k": "phone", "bg": "#000000"}, {"src": "assets/img/nomnom/02-ai-recommendation-results.webp", "w": 390, "h": 1272, "label": "AI recommendation results", "url": "", "k": "phone", "bg": "#020000"}, {"src": "assets/img/nomnom/03-canteen-directory.webp", "w": 414, "h": 1650, "label": "Canteen directory", "url": "", "k": "phone", "bg": "#000000"}, {"src": "assets/img/nomnom/04-surprise-me.webp", "w": 390, "h": 1278, "label": "Surprise Me", "url": "", "k": "phone", "bg": "#030000"}]}};
 
 function frame(s,mini){
 const img=`<img src="${s.src}" alt="${esc(s.label)}" width="${s.w}" height="${s.h}" loading="lazy">`;
@@ -105,6 +105,8 @@ $("#app").innerHTML=`
 <div class="wrap" id="top"><div class="hx">
 <div class="stage">
 <i class="cn tl" aria-hidden="true"></i><i class="cn tr" aria-hidden="true"></i><i class="cn bl" aria-hidden="true"></i><i class="cn br" aria-hidden="true"></i>
+<i class="orbit" aria-hidden="true"></i>
+<span class="tele tl" aria-hidden="true">X <b id="tx">000</b> Y <b id="ty">000</b></span><span class="tele tr" aria-hidden="true">SCROLL <b id="ts">000</b>%</span>
 <h1 class="bigname" aria-label="Nadhira Farra">
   <span class="nr" aria-hidden="true">${sp("Nadhira")}</span>
   <span class="nl" aria-hidden="true">${sp("Farra")}</span>
@@ -144,7 +146,6 @@ $("#app").innerHTML=`
 <div class="idb"><div class="idpic"><img src="assets/img/profile-id.webp" alt="Nadhira Farra" width="240" height="300" loading="lazy"></div>
 <h3>Nadhira Farra Aisya Suistiyono</h3><p>Software Engineering Technology</p></div>
 </article>
-<span class="sticker gpa" data-cursor="Drag me">GPA 3.87<small> / 4.00</small></span>
 </div></div></div></div></section>
 <section id="skills"><div class="wrap"><span class="eyebrow">Skills &amp; Tools</span><h2>What I Do</h2>
 <div class="grid2">${SKILLS.map(([h,a])=>`<div class="card"><h3>${h}</h3><ul class="chips">${a.map(x=>`<li>${x}</li>`).join("")}</ul></div>`).join("")}</div></div></section>
@@ -205,7 +206,13 @@ const el=h&&document.getElementById(h);
 if(el)el.scrollIntoView();else if(!h)window.scrollTo(0,0);
 }
 function reveal(){if(matchMedia("(prefers-reduced-motion:reduce)").matches||!("IntersectionObserver" in window))return;
-const io=reveal.io||(reveal.io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.1}));
+/* Replays every time a block enters the screen: shown once it is clearly in view,
+   reset only after it has fully left, so scrolling down-up-down always animates the same way. */
+const io=reveal.io||(reveal.io=new IntersectionObserver(es=>es.forEach(e=>{
+const c=e.target.classList;
+if(!e.isIntersecting){if(c.contains("in"))c.remove("in");return}
+if(!c.contains("in")&&(e.intersectionRatio>=.1||e.intersectionRect.height>=120))c.add("in")}),
+{threshold:Array.from({length:21},(_,i)=>i/20),rootMargin:"0px 0px -30px 0px"}));
 document.querySelectorAll("section .wrap > *:not(.rv)").forEach(el=>{el.classList.add("rv");io.observe(el)})}
 addEventListener("hashchange",()=>{route();reveal();hud()});route();reveal();hud();
 
@@ -270,3 +277,40 @@ if(innerHeight+scrollY>=document.documentElement.scrollHeight-4)cur=ids.length-1
 setActive(as[cur])}
 addEventListener("scroll",spy,{passive:true});addEventListener("hashchange",()=>setTimeout(spy,80));addEventListener("resize",()=>place(active));
 setTimeout(spy,60);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(()=>{ready=false;spy()})})();
+/* futuristic layer: live telemetry, section status chip, decode-in headings */
+(function(){
+const pad=n=>String(Math.max(0,Math.min(999,Math.round(n)))).padStart(3,"0");
+const names=["HOME","ABOUT","EDUCATION","SKILLS","WORK","CONTACT"],ids=["top","about","education","skills","work","contact"];
+const chip=document.createElement("div");chip.className="hudchip";chip.setAttribute("aria-hidden","true");
+chip.innerHTML='<i></i><span id="hs">HOME</span><b id="hn">01/06</b><em id="hp">000%</em>';document.body.appendChild(chip);
+let busy=false;
+function frame(){busy=false;
+const d=document.documentElement,p=scrollY/((d.scrollHeight-innerHeight)||1)*100;
+const ts=document.getElementById("ts");if(ts)ts.textContent=pad(p);
+let cur=0;
+if(location.hash.startsWith("#p-")){document.getElementById("hs").textContent="CASE STUDY";document.getElementById("hn").textContent="--/06"}
+else{ids.forEach((id,i)=>{const el=document.getElementById(id);if(el&&el.getBoundingClientRect().top<=innerHeight*.4)cur=i});
+if(innerHeight+scrollY>=d.scrollHeight-4)cur=ids.length-1;
+document.getElementById("hs").textContent=names[cur];document.getElementById("hn").textContent="0"+(cur+1)+"/06"}
+document.getElementById("hp").textContent=pad(p)+"%"}
+addEventListener("scroll",()=>{if(!busy){busy=true;requestAnimationFrame(frame)}},{passive:true});
+addEventListener("hashchange",()=>setTimeout(()=>{frame();decode()},60));
+addEventListener("mousemove",e=>{const x=document.getElementById("tx"),y=document.getElementById("ty");if(x&&y){x.textContent=pad(e.clientX);y.textContent=pad(e.clientY)}},{passive:true});
+/* headings decode every time their section comes back into view */
+let dio;
+function decode(){if(!("IntersectionObserver" in window))return;
+dio=dio||new IntersectionObserver(es=>es.forEach(e=>{const t=e.target;
+if(e.isIntersecting&&!t._on){t._on=1;scramble(t)}else if(!e.isIntersecting)t._on=0}),{threshold:.6});
+document.querySelectorAll("section h2:not([data-d]),section .eyebrow:not([data-d])").forEach(el=>{el.dataset.d=1;dio.observe(el)})}
+decode();frame();setTimeout(frame,150)})();
+
+/* failsafe: anything on screen is always shown, even if the observer misses it */
+(function(){let b=false;
+function chk(){b=false;const vh=innerHeight;
+document.querySelectorAll(".rv:not(.in)").forEach(el=>{const r=el.getBoundingClientRect();if(r.bottom>80&&r.top<vh-60)el.classList.add("in")})}
+addEventListener("scroll",()=>{if(!b){b=true;requestAnimationFrame(chk)}},{passive:true});
+addEventListener("hashchange",()=>setTimeout(chk,120));setTimeout(chk,300);setTimeout(chk,1200)})();
+
+/* remember the chosen theme (dark is the default) */
+(function(){const t=document.getElementById("theme");if(!t)return;
+t.addEventListener("click",()=>{try{localStorage.setItem("theme",document.documentElement.dataset.theme)}catch(e){}})})();
