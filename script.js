@@ -104,32 +104,25 @@ const socHTML=([k,l,u])=>`<li><a href="${esc(u)}"${k==="gmail"?"":' target="_bla
 $("#app").innerHTML=`
 <div class="wrap" id="top"><div class="hx">
 <div class="stage">
+
 <i class="cn tl" aria-hidden="true"></i><i class="cn tr" aria-hidden="true"></i><i class="cn bl" aria-hidden="true"></i><i class="cn br" aria-hidden="true"></i>
+
+<div class="cells" aria-hidden="true"></div>
+
 <i class="orbit" aria-hidden="true"></i>
 <span class="tele tl" aria-hidden="true">X <b id="tx">000</b> Y <b id="ty">000</b></span><span class="tele tr" aria-hidden="true">SCROLL <b id="ts">000</b>%</span>
 <h1 class="bigname" aria-label="Nadhira Farra">
   <span class="nr" aria-hidden="true">${sp("Nadhira")}</span>
-  <span class="nl" aria-hidden="true">${sp("Farra")}</span>
+  <span class="nl" aria-hidden="true">${sp("Farra.")}</span>
 </h1>
-
-<div class="arch">
-  <div class="pic">
-    <img src="assets/img/profile.webp" alt="Portrait of Nadhira Farra" width="560" height="700" fetchpriority="high">
-  </div>
-  ${FL}
-  <span class="sticker" data-cursor="Drag me">Design × Code</span>
-</div>
-
+<div class="cut"><img src="assets/img/profile-cut.webp" alt="Portrait of Nadhira Farra" width="237" height="677" fetchpriority="high"><span class="sticker" data-cursor="Drag me">Design × Code</span></div>
 <ul class="soc l">${soc.slice(0,2).map(socHTML).join("")}</ul>
 <ul class="soc r">${soc.slice(2).map(socHTML).join("")}</ul>
-
-<span class="tick l" aria-hidden="true">01 / UI·UX</span>
-<span class="tick r" aria-hidden="true">02 / FRONTEND</span>
+<div class="roll" aria-hidden="true">
+<div class="rr a"><div>${"UI/UX Designer | Frontend Developer | User Research | Web Development | ".repeat(8)}</div></div>
+<div class="rr b"><div>${"Interaction Design | Wireframing | Prototyping | Information Architecture | ".repeat(8)}</div></div>
 </div>
-<p class="tag">Turning thoughtful ideas into meaningful digital experiences</p>
-<p class="ctas"><a class="btn p" href="#work">Explore My Work</a><a class="btn s" href="#contact">Get in Touch</a></p>
-</div></div>
-<div class="marq" aria-hidden="true"><div>${"UX/UI Design ✱ User Research ✱ Creative Thinking ✱ Interaction Design ✱ Wireframing ✱ Prototyping ✱ Visual Design ✱ Frontend Development ✱ ".repeat(6)}</div></div>
+</div></div></div>
 <section id="about"><div class="wrap"><div class="band about"><figure class="polaroid"><img src="assets/img/profile-formal.webp" alt="Nadhira Farra speaking at a campus event" width="520" height="650" loading="lazy"><figcaption>Nadhira Farra</figcaption></figure><span class="eyebrow">About</span><h2>A Little About Me</h2>
 <p>I love turning complex ideas into simple, meaningful experiences. With a curiosity for how people think, interact, and connect with technology, I enjoy exploring the sweet spot between thoughtful design and functional development. For me, great digital experiences aren’t just about how they look, but how they make people feel and what they make possible.</p>
 <p><strong>Interested in:</strong></p><ul class="chips"><li>User Experience Design</li><li>User Research</li><li>UI Design</li><li>Product Design</li></ul>

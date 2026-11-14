@@ -760,3 +760,84 @@ section .eyebrow::after{content:" // 0" counter(sec);opacity:.55}
 :root[data-theme="dark"] .idc:hover{box-shadow:0 0 0 1px var(--glow),0 24px 60px -22px var(--glow)}
 :root[data-theme="dark"] .idh{background:linear-gradient(135deg,var(--primary),color-mix(in srgb,var(--glow) 80%,#fff));border-bottom-color:color-mix(in srgb,var(--glow) 55%,transparent);color:#1d1726;backdrop-filter:none}
 :root[data-theme="dark"] .idh b,:root[data-theme="dark"] .idh span{color:#1d1726}
+<<<<<<< HEAD
+=======
+
+/* v17: motion pack */
+body>header{view-transition-name:site-nav}.hudchip{view-transition-name:hud-chip}.prog{view-transition-name:prog-bar}
+::view-transition-old(root){animation:m-vt-out .28s ease both}
+::view-transition-new(root){animation:m-vt-in .55s cubic-bezier(.2,.9,.2,1) both}
+@keyframes m-vt-out{to{opacity:0;transform:scale(.97) translateY(-12px);filter:blur(4px)}}
+@keyframes m-vt-in{from{opacity:0;transform:translateY(40px) scale(1.01)}}
+@keyframes m-letter{from{opacity:0;transform:translateY(55%) rotate(9deg)}}
+@keyframes m-arch{from{opacity:0;transform:translateY(80px) scale(.9)}}
+@keyframes m-zoom{from{transform:scale(1.2)}}
+@keyframes m-pop{from{opacity:0;transform:scale(.3) rotate(-30deg)}}
+@keyframes m-fade{from{opacity:0}}
+@keyframes m-rise{from{opacity:0;transform:translateY(20px)}}
+@keyframes m-bob{50%{transform:rotate(-5deg) translateY(-7px)}}
+@media(prefers-reduced-motion:no-preference){
+ /* hero entrance (replays whenever the home page is shown) */
+ .bigname .nr .lt{animation:m-letter .85s calc(.1s + var(--i,0) * 55ms) cubic-bezier(.2,.9,.2,1) backwards}
+ .bigname .nl .lt{animation:m-letter .85s calc(.1s + (var(--i,0) + 7) * 55ms) cubic-bezier(.2,.9,.2,1) backwards}
+ .arch{animation:m-arch 1s .3s cubic-bezier(.2,.9,.2,1) backwards}
+ .pic img{animation:m-zoom 1.5s .3s cubic-bezier(.2,.9,.2,1) backwards}
+ .soc li{animation:m-pop .6s calc(.95s + var(--s,0) * 100ms) cubic-bezier(.3,1.7,.5,1) backwards}
+ .soc li:nth-child(2){--s:1}
+ .cn,.tele,.tick{animation:m-fade .8s 1.05s backwards}
+ .tag{animation:m-rise .7s 1s backwards}.ctas{animation:m-rise .7s 1.15s backwards}
+ .marq{animation:m-fade .8s 1.2s backwards}
+ .orbit{animation:spin 46s linear infinite,m-fade 1.2s .5s backwards}
+ .sticker{animation:m-bob 4.5s ease-in-out infinite}
+ /* scroll-linked hero: names part, portrait sinks a little */
+ .bigname .nr{transform:translateX(calc(var(--hs,0) * -8vw));opacity:calc(1 - var(--hs,0) * .5)}
+ .bigname .nl{transform:translateX(calc(var(--hs,0) * 8vw));opacity:calc(1 - var(--hs,0) * .5)}
+ .arch{transform:translateY(calc(var(--hs,0) * 44px)) scale(calc(1 - var(--hs,0) * .06))}
+ /* staggered entrances inside revealed blocks */
+ .rv .chips li{opacity:0;scale:.55;translate:0 10px;transition:opacity .4s calc(var(--i,0) * 45ms),scale .55s cubic-bezier(.3,1.7,.5,1) calc(var(--i,0) * 45ms),translate .55s cubic-bezier(.3,1.7,.5,1) calc(var(--i,0) * 45ms),transform .22s cubic-bezier(.3,1.7,.5,1),background .2s,color .2s}
+ .rv.in .chips li{opacity:1;scale:1;translate:0 0}
+ .rv .work{opacity:0;translate:0 36px;transition:opacity .6s calc(var(--i,0) * 90ms),translate .8s cubic-bezier(.2,.9,.2,1) calc(var(--i,0) * 90ms),transform .15s ease-out,box-shadow .25s,outline-color .2s,outline-offset .25s}
+ .rv.in .work{opacity:1;translate:0 0}
+ h2.rv::after{width:0;transition:width .9s .25s cubic-bezier(.3,1.4,.5,1)}
+ h2.rv.in::after{width:min(150px,60%)}
+}
+
+/* v18: hero like the reference (cut-out portrait, split name, rolling roles, lit grid) */
+.stage{--sh:clamp(540px,46vw,700px);--fh:calc(var(--sh) * .96);--figw:calc(var(--fh) * .33 + 3vw);height:var(--sh);min-height:var(--sh);overflow:clip}
+.cells{position:absolute;inset:0;display:grid;z-index:0;pointer-events:none}
+.cells i{border:1px solid transparent;transition:background 1.2s,border-color 1.2s,box-shadow 1.2s}
+.cells i.lit{background:color-mix(in srgb,var(--primary) 20%,transparent);border-color:color-mix(in srgb,var(--primary) 55%,transparent);box-shadow:inset 0 0 18px color-mix(in srgb,var(--primary) 35%,transparent);transition:none}
+.bigname{display:grid;grid-template-columns:1fr var(--figw) 1fr;align-items:center;padding:0 clamp(14px,3vw,56px);font-size:clamp(46px,9.8vw,170px);z-index:1}
+.bigname .nr{grid-column:1;justify-self:end;text-align:right}
+.bigname .nl{grid-column:3;justify-self:start}
+.cut{position:absolute;left:50%;bottom:0;height:var(--fh);z-index:2;translate:calc(-50% + var(--mx,0) * 8px) 0;transform-origin:50% 100%;filter:drop-shadow(0 20px 34px rgba(20,10,40,.28))}
+.cut img{display:block;height:100%;width:auto;-webkit-mask-image:linear-gradient(#000 70%,transparent 99%);mask-image:linear-gradient(#000 70%,transparent 99%)}
+.cut .sticker{position:absolute;left:-64%;bottom:46%;filter:none}
+.soc.l{left:clamp(14px,3.4vw,60px);right:auto;top:71%}
+.soc.r{right:clamp(14px,3.4vw,60px);left:auto;top:71%}
+.roll{position:absolute;left:0;right:0;bottom:0;z-index:4;pointer-events:none;padding-bottom:6px}
+.rr{overflow:hidden;white-space:nowrap;font-weight:800;font-size:clamp(26px,5.3vw,92px);line-height:1.05;letter-spacing:-.035em;color:var(--text)}
+.rr>div{display:inline-block;animation:mq 46s linear infinite}
+.rr.b{color:transparent;-webkit-text-stroke:2px var(--text)}
+.rr.b>div{animation-duration:56s;animation-direction:reverse}
+@keyframes h-left{from{opacity:0;transform:translateX(-26vw) scale(.6)}}
+@keyframes h-right{from{opacity:0;transform:translateX(26vw) scale(.6)}}
+@keyframes h-cut{from{opacity:0;transform:translateY(70px)}}
+@media(prefers-reduced-motion:no-preference){
+ .bigname .nr .lt,.bigname .nl .lt{animation:none}
+ .bigname .nr{animation:h-left 1s .55s cubic-bezier(.2,.9,.2,1) backwards}
+ .bigname .nl{animation:h-right 1s .75s cubic-bezier(.2,.9,.2,1) backwards}
+ .cut{animation:h-cut .9s .1s cubic-bezier(.2,.9,.2,1) backwards;transform:translateY(calc(var(--hs,0) * 44px)) scale(calc(1 - var(--hs,0) * .06))}
+ .soc li{animation:m-pop .6s calc(1.35s + var(--s,0) * 100ms) cubic-bezier(.3,1.7,.5,1) backwards}
+ .roll .rr{animation:m-rise .9s 1.25s backwards}
+ .cells{animation:m-fade 1s 1s backwards}
+}
+@media(max-width:700px){
+ .stage{--sh:min(92svh,760px);--fh:calc(var(--sh) * .8);--figw:0px}
+ .bigname{grid-template-columns:1fr;align-content:start;justify-items:center;padding-top:7%;font-size:clamp(52px,19vw,120px)}
+ .bigname .nr,.bigname .nl{grid-column:1;justify-self:center;text-align:center}
+ .soc.l{left:14px;top:auto;bottom:22vw}.soc.r{right:14px;left:auto;top:auto;bottom:22vw}
+ .rr{font-size:clamp(24px,8vw,48px)}
+ .cut .sticker{left:-30%;bottom:38%}
+}
+>>>>>>> 2dd3385 (Update portfolio)
