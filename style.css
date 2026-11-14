@@ -760,8 +760,6 @@ section .eyebrow::after{content:" // 0" counter(sec);opacity:.55}
 :root[data-theme="dark"] .idc:hover{box-shadow:0 0 0 1px var(--glow),0 24px 60px -22px var(--glow)}
 :root[data-theme="dark"] .idh{background:linear-gradient(135deg,var(--primary),color-mix(in srgb,var(--glow) 80%,#fff));border-bottom-color:color-mix(in srgb,var(--glow) 55%,transparent);color:#1d1726;backdrop-filter:none}
 :root[data-theme="dark"] .idh b,:root[data-theme="dark"] .idh span{color:#1d1726}
-<<<<<<< HEAD
-=======
 
 /* v17: motion pack */
 body>header{view-transition-name:site-nav}.hudchip{view-transition-name:hud-chip}.prog{view-transition-name:prog-bar}
@@ -812,7 +810,7 @@ body>header{view-transition-name:site-nav}.hudchip{view-transition-name:hud-chip
 .bigname .nl{grid-column:3;justify-self:start}
 .cut{position:absolute;left:50%;bottom:0;height:var(--fh);z-index:2;translate:calc(-50% + var(--mx,0) * 8px) 0;transform-origin:50% 100%;filter:drop-shadow(0 20px 34px rgba(20,10,40,.28))}
 .cut img{display:block;height:100%;width:auto;-webkit-mask-image:linear-gradient(#000 70%,transparent 99%);mask-image:linear-gradient(#000 70%,transparent 99%)}
-.cut .sticker{position:absolute;left:-64%;bottom:46%;filter:none}
+.cut .sticker{position:absolute;left:6%;bottom:36%;filter:none}
 .soc.l{left:clamp(14px,3.4vw,60px);right:auto;top:71%}
 .soc.r{right:clamp(14px,3.4vw,60px);left:auto;top:71%}
 .roll{position:absolute;left:0;right:0;bottom:0;z-index:4;pointer-events:none;padding-bottom:6px}
@@ -838,6 +836,11 @@ body>header{view-transition-name:site-nav}.hudchip{view-transition-name:hud-chip
  .bigname .nr,.bigname .nl{grid-column:1;justify-self:center;text-align:center}
  .soc.l{left:14px;top:auto;bottom:22vw}.soc.r{right:14px;left:auto;top:auto;bottom:22vw}
  .rr{font-size:clamp(24px,8vw,48px)}
- .cut .sticker{left:-30%;bottom:38%}
+ .cut .sticker{left:6%;bottom:30%}
 }
->>>>>>> 2dd3385 (Update portfolio)
+
+/* v19: single purple band, tilted (back to the earlier look) */
+.roll{bottom:18px;padding-bottom:0}
+.roll .marq{margin:0 -14px;overflow:hidden;white-space:nowrap;background:var(--primary);color:var(--onp);border-block:2px solid var(--text);font-weight:800;font-size:clamp(1.05rem,2vw,1.7rem);line-height:1.5;padding:10px 0;transform:rotate(-1.4deg)}
+.roll .marq>div{display:inline-block;animation:mq 34s linear infinite}
+@media(max-width:700px){.roll .marq{font-size:1.05rem}}

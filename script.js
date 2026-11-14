@@ -104,11 +104,7 @@ const socHTML=([k,l,u])=>`<li><a href="${esc(u)}"${k==="gmail"?"":' target="_bla
 $("#app").innerHTML=`
 <div class="wrap" id="top"><div class="hx">
 <div class="stage">
-
-<i class="cn tl" aria-hidden="true"></i><i class="cn tr" aria-hidden="true"></i><i class="cn bl" aria-hidden="true"></i><i class="cn br" aria-hidden="true"></i>
-
 <div class="cells" aria-hidden="true"></div>
-
 <i class="orbit" aria-hidden="true"></i>
 <span class="tele tl" aria-hidden="true">X <b id="tx">000</b> Y <b id="ty">000</b></span><span class="tele tr" aria-hidden="true">SCROLL <b id="ts">000</b>%</span>
 <h1 class="bigname" aria-label="Nadhira Farra">
@@ -118,10 +114,7 @@ $("#app").innerHTML=`
 <div class="cut"><img src="assets/img/profile-cut.webp" alt="Portrait of Nadhira Farra" width="237" height="677" fetchpriority="high"><span class="sticker" data-cursor="Drag me">Design × Code</span></div>
 <ul class="soc l">${soc.slice(0,2).map(socHTML).join("")}</ul>
 <ul class="soc r">${soc.slice(2).map(socHTML).join("")}</ul>
-<div class="roll" aria-hidden="true">
-<div class="rr a"><div>${"UI/UX Designer | Frontend Developer | User Research | Web Development | ".repeat(8)}</div></div>
-<div class="rr b"><div>${"Interaction Design | Wireframing | Prototyping | Information Architecture | ".repeat(8)}</div></div>
-</div>
+<div class="roll" aria-hidden="true"><div class="marq"><div>${"UX/UI Designer ✱ User Research ✱ Wireframing ✱ Prototyping ✱ Usability Evaluation ✱ Frontend Developer ✱ ".repeat(6)}</div></div></div>
 </div></div></div>
 <section id="about"><div class="wrap"><div class="band about"><figure class="polaroid"><img src="assets/img/profile-formal.webp" alt="Nadhira Farra speaking at a campus event" width="520" height="650" loading="lazy"><figcaption>Nadhira Farra</figcaption></figure><span class="eyebrow">About</span><h2>A Little About Me</h2>
 <p>I love turning complex ideas into simple, meaningful experiences. With a curiosity for how people think, interact, and connect with technology, I enjoy exploring the sweet spot between thoughtful design and functional development. For me, great digital experiences aren’t just about how they look, but how they make people feel and what they make possible.</p>
@@ -307,3 +300,55 @@ addEventListener("hashchange",()=>setTimeout(chk,120));setTimeout(chk,300);setTi
 /* remember the chosen theme (dark is the default) */
 (function(){const t=document.getElementById("theme");if(!t)return;
 t.addEventListener("click",()=>{try{localStorage.setItem("theme",document.documentElement.dataset.theme)}catch(e){}})})();
+
+/* ===== motion pack ===== */
+function stagger(){
+document.querySelectorAll(".chips").forEach(ul=>[...ul.children].forEach((li,i)=>li.style.setProperty("--i",i)));
+document.querySelectorAll("#cards .work").forEach((w,i)=>w.style.setProperty("--i",i%6))}
+stagger();addEventListener("hashchange",()=>setTimeout(stagger,40));
+
+(function(){
+const reduced=matchMedia("(prefers-reduced-motion:reduce)").matches;if(reduced)return;
+
+/* 1) hero parallax on scroll + marquee that speeds up with scroll velocity */
+let last=scrollY,v=0,run=false,stage=null;
+function loop(){
+ const y=scrollY,dy=Math.abs(y-last);last=y;v=v*.88+dy*.12;
+ if(!stage||!stage.isConnected)stage=document.querySelector(".stage");
+ if(stage)stage.style.setProperty("--hs",Math.min(1,y/(innerHeight*.8)).toFixed(3));
+ const rate=1+Math.min(v,50)*.2;
+ if(document.getAnimations)document.getAnimations().forEach(a=>{if(a.animationName==="mq")a.updatePlaybackRate(v>.05?rate:1)});
+ if(v>.05||dy>0)requestAnimationFrame(loop);else run=false}
+addEventListener("scroll",()=>{if(!run){run=true;last=scrollY;requestAnimationFrame(loop)}},{passive:true});
+
+/* 2) smooth transition when opening / leaving a case study */
+if(document.startViewTransition){
+ const orig=route;let key=location.hash.startsWith("#p-")?location.hash:"home";
+ route=function(){
+  const k=location.hash.startsWith("#p-")?location.hash:"home";
+  if(k===key){orig();return}
+  key=k;
+  try{const vt=document.startViewTransition(()=>{orig()});
+   vt.updateCallbackDone.then(()=>{try{reveal();hud();stagger()}catch(e){}}).catch(()=>{})}
+  catch(e){orig()}}}
+})();
+
+/* hero grid: cells under the cursor light up and fade out (self-contained: builds its own layer and styles) */
+function cells(){
+ const st=document.querySelector(".stage");if(!st)return;
+ let box=st.querySelector(".cells");
+ if(!box){box=document.createElement("div");box.className="cells";box.setAttribute("aria-hidden","true");st.prepend(box)}
+ Object.assign(box.style,{position:"absolute",inset:"0",display:"grid",pointerEvents:"none",zIndex:"0"});
+ const S=64,w=st.clientWidth,h=st.clientHeight,c=Math.max(1,Math.ceil(w/S)),r=Math.max(1,Math.ceil(h/S));
+ box.style.gridTemplateColumns="repeat("+c+","+S+"px)";box.style.gridAutoRows=S+"px";
+ box.innerHTML="<i></i>".repeat(c*r);box._c=c;box._r=r;box._S=S}
+if(!window._cellsOn){window._cellsOn=1;
+ const css=document.createElement("style");css.id="cells-css";
+ css.textContent=".cells i{border:1px solid transparent;transition:background 1.3s,border-color 1.3s,box-shadow 1.3s}.cells i.lit{background:color-mix(in srgb,var(--primary) 32%,transparent);border-color:color-mix(in srgb,var(--primary) 70%,transparent);box-shadow:inset 0 0 20px color-mix(in srgb,var(--primary) 45%,transparent),0 0 16px color-mix(in srgb,var(--primary) 30%,transparent);transition:none}";
+ document.head.appendChild(css);
+ addEventListener("mousemove",e=>{const st=document.querySelector(".stage"),b=st&&st.querySelector(".cells");if(!b||!b._S)return;
+  const rc=st.getBoundingClientRect(),x=Math.floor((e.clientX-rc.left)/b._S),y=Math.floor((e.clientY-rc.top)/b._S);
+  if(x<0||y<0||x>=b._c||y>=b._r)return;const el=b.children[y*b._c+x];if(!el)return;
+  el.classList.add("lit");clearTimeout(el._t);el._t=setTimeout(()=>el.classList.remove("lit"),800)},{passive:true});
+ addEventListener("resize",cells);addEventListener("hashchange",()=>setTimeout(cells,90));addEventListener("load",cells)}
+cells();setTimeout(cells,300);
