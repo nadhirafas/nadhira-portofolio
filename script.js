@@ -13,7 +13,6 @@ const SKILLS=[
 ["UI/UX Design",["User Research & Validation","User Flows","Information Architecture","Wireframing","Prototyping","Design Systems","Usability Evaluation"]],
 ["Development",["HTML","CSS","JavaScript","Python","Vue.js","Vite","React.js","PHP","Laravel","Blade","SQL"]],
 ["Tools",["Figma", "Visual Studio Code", "Canva","CapCut","Git & GitHub","Docker","Blender","Unreal Engine"]]];
-
 const P=[
 {id:"nomnom",origin:"Self-initiated",ctx:"Course project, team of 4",n:"01",t:"NomNom",sub:"AI Food Recommendation App",cat:"UX/UI Design · Mobile Application",type:"ui",role:"UX/UI Designer",status:"Design Prototype",
 blurb:"A food recommendation app concept for university students. Our team chose the problem, then reshaped the idea after research with 31 respondents.",
@@ -139,7 +138,9 @@ $("#app").innerHTML=`
 <p class="muted">Design projects come first, followed by development projects that show I can build what I design. Each project’s visual style follows its own brief; this website is my own UI direction.</p>
 <div class="filters" id="filters"><button class="on" data-f="all">All</button><button data-f="ui">UX/UI Design</button><button data-f="dev">Development</button></div>
 <div class="grid2" id="cards">${P.map(cardHTML).join("")}</div></div></section>
+
 ${creative()}
+
 <section id="contact">
   <div class="wrap">
     <div class="band contact">
@@ -256,7 +257,9 @@ const setActive=a=>{if(a===active&&ready)return;active=a;ready=true;as.forEach(x
 if(L.scrollWidth>L.clientWidth)L.scrollTo({left:a.offsetLeft-L.clientWidth/2+a.offsetWidth/2,behavior:"smooth"})};
 as.forEach(a=>{a.addEventListener("mouseenter",()=>place(a));a.addEventListener("focus",()=>place(a))});
 L.addEventListener("mouseleave",()=>place(active));
+
 const ids=["top","about","education","skills","work","creative","contact"];
+
 function spy(){if(location.hash.startsWith("#p-")){setActive(as[4]);return}
 const y=innerHeight*.35;let cur=0;
 ids.forEach((id,i)=>{const el=document.getElementById(id);if(el&&el.getBoundingClientRect().top<=y)cur=i});
@@ -267,18 +270,22 @@ setTimeout(spy,60);if(document.fonts&&document.fonts.ready)document.fonts.ready.
 /* futuristic layer: live telemetry, section status chip, decode-in headings */
 (function(){
 const pad=n=>String(Math.max(0,Math.min(999,Math.round(n)))).padStart(3,"0");
+
 const names=["HOME","ABOUT","EDUCATION","SKILLS","WORK","CREATIVE","CONTACT"],ids=["top","about","education","skills","work","creative","contact"];
 const chip=document.createElement("div");chip.className="hudchip";chip.setAttribute("aria-hidden","true");
 chip.innerHTML='<i></i><span id="hs">HOME</span><b id="hn">01/07</b><em id="hp">000%</em>';document.body.appendChild(chip);
+
 let busy=false;
 function frame(){busy=false;
 const d=document.documentElement,p=scrollY/((d.scrollHeight-innerHeight)||1)*100;
 const ts=document.getElementById("ts");if(ts)ts.textContent=pad(p);
 let cur=0;
+
 if(location.hash.startsWith("#p-")){document.getElementById("hs").textContent="CASE STUDY";document.getElementById("hn").textContent="--/07"}
 else{ids.forEach((id,i)=>{const el=document.getElementById(id);if(el&&el.getBoundingClientRect().top<=innerHeight*.4)cur=i});
 if(innerHeight+scrollY>=d.scrollHeight-4)cur=ids.length-1;
 document.getElementById("hs").textContent=names[cur];document.getElementById("hn").textContent="0"+(cur+1)+"/07"}
+
 document.getElementById("hp").textContent=pad(p)+"%"}
 addEventListener("scroll",()=>{if(!busy){busy=true;requestAnimationFrame(frame)}},{passive:true});
 addEventListener("hashchange",()=>setTimeout(()=>{frame();decode()},60));

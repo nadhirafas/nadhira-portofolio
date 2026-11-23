@@ -844,6 +844,7 @@ body>header{view-transition-name:site-nav}.hudchip{view-transition-name:hud-chip
 .roll .marq{margin:0 -14px;overflow:hidden;white-space:nowrap;background:var(--primary);color:var(--onp);border-block:2px solid var(--text);font-weight:800;font-size:clamp(1.05rem,2vw,1.7rem);line-height:1.5;padding:10px 0;transform:rotate(-1.4deg)}
 .roll .marq>div{display:inline-block;animation:mq 34s linear infinite}
 @media(max-width:700px){.roll .marq{font-size:1.05rem}}
+<<<<<<< HEAD
 
 /* =========================================================
    v20: Creative Works — editorial spreads
@@ -965,3 +966,5 @@ html.cw-lock{overflow:hidden}
  .cw-pic img{max-height:calc(100dvh - 230px)}.cw-pic.tall{max-height:calc(100dvh - 230px)}
  .cw-cap{padding-bottom:58px}
 }
+=======
+>>>>>>> ffd2b98110bdf5289ca9519b84d9c1361f85623f
